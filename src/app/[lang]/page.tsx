@@ -1,3 +1,4 @@
+import CourseMeta from "@/components/CourseMeta";
 import { fetchProduct } from "@/lib/api";
 import { InstructorBlock } from "@/types/productSections";
 
@@ -9,7 +10,11 @@ export default async function ProductPage({ params }: { params: Promise<{ lang: 
 
   console.log("Product Data:", data);
   console.log("Instructors:", instructors);
-  return <div>Hello World</div>;
+  return (
+    <>
+      <CourseMeta courseData={data} />
+    </>
+  );
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
