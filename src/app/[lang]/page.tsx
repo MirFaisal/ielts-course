@@ -1,18 +1,16 @@
 import CourseMeta from "@/components/CourseMeta";
 import { fetchProduct } from "@/lib/api";
-import { InstructorBlock } from "@/types/productTypes";
 
 export default async function ProductPage({ params }: { params: Promise<{ lang: "en" | "bn" }> }) {
   const { lang } = await params;
   const { data } = await fetchProduct(lang);
 
-  const instructors = data.sections.find((s: InstructorBlock) => s.type === "instructors");
-
   console.log("Product Data:", data);
-  console.log("Instructors:", instructors);
+  // console.log("Instructors:", instructors);
   return (
     <>
       <CourseMeta courseData={data} />
+      <div className="w-full h-[1900px]"></div>
     </>
   );
 }

@@ -1,13 +1,14 @@
+import { Course } from "@/types/productTypes";
 import Image from "next/image";
 import CourseVisuals from "./CourseVisuals";
 
-const CourseMeta = ({ courseData }: { courseData: any }) => {
+const CourseMeta = ({ courseData }: { courseData: Course }) => {
   return (
     <>
       <div className="w-full bg-[url('/background/course_meta_bg.jpeg')] bg-cover bg-center h-64 flex items-center justify-center">
-        <div className="max-w-6xl mx-auto grid grid-cols-5 justify-between items-center h-full gap-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-6 justify-between items-center h-full gap-4">
           {/* Course Title and Rating */}
-          <div className="col-span-3 h-full flex items-center justify-center">
+          <div className="col-span-4 h-full flex items-center justify-center">
             <div className="flex flex-col gap-2">
               <h1 className="text-4xl font-bold text-white">{courseData.title}</h1>
               {/* Course Rating */}
@@ -33,7 +34,7 @@ const CourseMeta = ({ courseData }: { courseData: any }) => {
           </div>
           {/* Course Image and cta */}
           <div className="col-span-2 h-full relative">
-            <div className="absolute top-[50px] left-0 w-full h-[900px] flex items-center justify-center">
+            <div className="absolute top-[50px] left-0 w-full flex items-center justify-center">
               <CourseVisuals media={courseData.media} />
             </div>
           </div>
