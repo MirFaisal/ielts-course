@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${hindSiliguri.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
+        <Navbar /> 
         {children}
       </body>
     </html>
