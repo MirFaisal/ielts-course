@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
@@ -19,12 +20,30 @@ const suggestions = [
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Get current language from pathname
+  const getCurrentLanguage = () => {
+    if (pathname.startsWith("/bn")) return "bn";
+    if (pathname.startsWith("/en")) return "en";
+    return "en"; // default to English
+  };
+
+  const currentLang = getCurrentLanguage();
+
+  // Toggle language function
+  const toggleLanguage = () => {
+    const newLang = currentLang === "en" ? "bn" : "en";
+    const currentPath = pathname.replace(/^\/(en|bn)/, "") || "";
+    router.push(`/${newLang}${currentPath}`);
+  };
 
   return (
     <nav className="w-full bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href={`/${currentLang}`} className="flex items-center gap-2">
           <Image
             src="/10mslogo-svg.svg" // replace with your logo path
             alt="10 Minute School"
@@ -85,9 +104,11 @@ const Navbar = () => {
 
         {/* Right section */}
         <div className="hidden lg:flex items-center gap-4">
-          <button className="border px-2 py-1 rounded flex items-center gap-1 text-sm">
+          <button
+            onClick={toggleLanguage}
+            className="border px-2 py-1 rounded flex items-center gap-1 text-sm hover:bg-gray-50 transition-colors">
             <MdLanguage />
-            EN
+            {currentLang.toUpperCase()}
           </button>
           <div className="flex items-center text-green-600 text-sm font-semibold gap-1">
             <FaPhoneAlt size={14} />
@@ -125,9 +146,11 @@ const Navbar = () => {
           </div>
 
           <div className="flex justify-between items-center gap-2">
-            <button className="border px-3 py-1 rounded flex items-center gap-1 text-sm w-full justify-center">
+            <button
+              onClick={toggleLanguage}
+              className="border px-3 py-1 rounded flex items-center gap-1 text-sm w-full justify-center hover:bg-gray-50 transition-colors">
               <MdLanguage />
-              EN
+              {currentLang.toUpperCase()}
             </button>
             <div className="flex items-center gap-1 text-green-600 font-semibold text-sm">
               <FaPhoneAlt size={14} />
