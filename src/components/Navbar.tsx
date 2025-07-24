@@ -8,7 +8,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
 import { MdLanguage } from "react-icons/md";
 
-const navItems = ["ক্লাস ৬-১২", "ভর্তি পরীক্ষা", "অনলাইন ব্যাচ", "ইংলিশ সেন্টার", ];
+const navItems = ["ক্লাস ৬-১২", "ভর্তি পরীক্ষা", "অনলাইন ব্যাচ", "ইংলিশ সেন্টার"];
 const suggestions = [
   "HSC 25 শেষ মুহূর্তের প্রস্তুতি ...",
   "hsc 26",
@@ -44,13 +44,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
         {/* Logo */}
         <Link href={`/${currentLang}`} className="flex items-center gap-2">
-          <Image
-            src="/10mslogo-svg.svg" // replace with your logo path
-            alt="10 Minute School"
-            width={130}
-            height={40}
-            priority
-          />
+          <Image src="/10mslogo-svg.svg" alt="10 Minute School" width={130} height={40} priority />
         </Link>
 
         {/* Search */}
@@ -94,7 +88,6 @@ const Navbar = () => {
             <div key={idx} className="relative group cursor-pointer">
               <span className="text-gray-700 text-[12px]">{item}</span>
               <span className="ml-1 text-xs">▼</span>
-              {/* Dropdown Placeholder */}
               <div className="absolute hidden group-hover:block top-full left-0 mt-2 bg-white shadow-md rounded-lg min-w-[200px] z-40 p-2">
                 <p className="text-xs text-gray-500 px-2 py-1">ড্রপডাউন কন্টেন্ট</p>
               </div>
