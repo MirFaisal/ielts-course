@@ -15,3 +15,10 @@ export interface InstructorBlock {
   order_idx: number;
   values: InstructorValue[];
 }
+
+export interface MediaItem {
+  name: string;
+  resource_type: string;
+  resource_value: string;
+  thumbnail_url?: string;
+}

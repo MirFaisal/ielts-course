@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CourseVisuals from "./CourseVisuals";
 
 const CourseMeta = ({ courseData }: { courseData: any }) => {
   return (
@@ -31,7 +32,11 @@ const CourseMeta = ({ courseData }: { courseData: any }) => {
             </div>
           </div>
           {/* Course Image and cta */}
-          <div className="border border-white col-span-2 h-full"></div>
+          <div className="col-span-2 h-full relative">
+            <div className="absolute top-[50px] left-0 w-full h-[900px] flex items-center justify-center">
+              <CourseVisuals media={courseData.media} />
+            </div>
+          </div>
         </div>
       </div>
     </>

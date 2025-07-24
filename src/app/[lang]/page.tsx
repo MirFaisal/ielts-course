@@ -1,6 +1,6 @@
 import CourseMeta from "@/components/CourseMeta";
 import { fetchProduct } from "@/lib/api";
-import { InstructorBlock } from "@/types/productSections";
+import { InstructorBlock } from "@/types/productTypes";
 
 export default async function ProductPage({ params }: { params: Promise<{ lang: "en" | "bn" }> }) {
   const { lang } = await params;
