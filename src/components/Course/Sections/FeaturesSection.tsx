@@ -1,7 +1,50 @@
-export default function FeaturesSection() {
+import Image from "next/image";
+
+interface SectionValue {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  icon?: string;
+  [key: string]: unknown;
+}
+
+interface FeaturesSectionProps {
+  features?: SectionValue[];
+}
+
+export default function FeaturesSection({ features = [] }: FeaturesSectionProps) {
   return (
-    <div>
-      <p className="text-gray-600">Features content will be implemented here.</p>
+    <div className="grid grid-cols-1 md:grid-cols-2 bg-gray-900 rounded-lg">
+      {features.map((feature, index) => (
+        <div key={feature.id || index} className="text-white p-6">
+          <div className="flex items-start space-x-4">
+            {/* Icon */}
+            {feature.icon && (
+              <div className="relative w-10 h-10 flex-shrink-0">
+                <Image src={feature.icon} alt={feature.title || "Feature"} fill className="object-contain" />
+              </div>
+            )}
+
+            {/* Content */}
+            <div className="flex-1">
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+
+              {/* Subtitle/Description */}
+              {feature.subtitle && (
+                <p className="text-gray-300 text-sm leading-relaxed">{feature.subtitle}</p>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {/* Show message if no features */}
+      {features.length === 0 && (
+        <div className="col-span-full text-center py-8 text-gray-500">
+          <p>No features data available</p>
+        </div>
+      )}
     </div>
   );
 }

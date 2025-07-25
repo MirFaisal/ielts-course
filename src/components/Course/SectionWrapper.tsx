@@ -8,7 +8,7 @@ interface SectionWrapperProps {
 
 export default function SectionWrapper({ sectionId, title, children }: SectionWrapperProps) {
   return (
-    <div id={sectionId} className="min-h-[300px] rounded-lg mt-8 scroll-mt-[120px] p-6 ">
+    <div id={sectionId} className="min-h-[300px] rounded-lg mt-8 scroll-mt-[120px] py-6 ">
       <h2 className="text-3xl font-bold mb-6 text-gray-900 pb-4">{title}</h2>
       <div className="section-content">{children}</div>
     </div>

@@ -87,7 +87,7 @@ export default function CourseDetails({ courseData }: { courseData: Course }) {
 
   return (
     <div className="max-w-6xl mx-auto grid grid-cols-6">
-      <div className="col-span-4 px-10">
+      <div className="col-span-4 px-8">
         {/* Navigation Slider */}
         <CourseNavigation
           anchorItems={anchorItems}
