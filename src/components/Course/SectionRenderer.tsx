@@ -1,6 +1,7 @@
 import AboutSection from "./Sections/AboutSection";
 import DefaultSection from "./Sections/DefaultSection";
 import FaqSection from "./Sections/FaqSection";
+import FeatureExplanationsSection from "./Sections/FeatureExplanationsSection";
 import FeaturesSection from "./Sections/FeaturesSection";
 import GroupJoinEngagementSection from "./Sections/GroupJoinEngagementSection";
 import InstructorsSection from "./Sections/InstructorsSection";
@@ -48,11 +49,13 @@ export default function SectionRenderer({ section }: SectionRendererProps) {
       case "testimonials":
         return <TestimonialsSection />;
       case "faq":
-        return <FaqSection />;
+        return <FaqSection faqs={section.values} />;
       case "group_join_engagement":
         return <GroupJoinEngagementSection engagements={section.values} />;
       case "about":
         return <AboutSection about={section.values} />;
+      case "feature_explanations":
+        return <FeatureExplanationsSection featureExplanations={section.values} />;
       default:
         return <DefaultSection />;
     }
