@@ -36,14 +36,25 @@ export default function InstructorsSection({ instructors = [] }: InstructorsSect
             {/* Instructor Details */}
             <div className="flex-1">
               {/* Name with Arrow */}
-              <div className="flex items-center space-x-2 mb-3">
-                <h3 className="text-xl font-semibold text-gray-900">{instructor.name}</h3>
+              <div className="flex items-center space-x-2 cursor-pointer hover:text-green-400">
+                <h3 className="text-xl font-semibold text-gray-900 hover:text-green-400">
+                  {instructor.name}
+                </h3>
+                {instructor.has_instructor_page && (
+                  <svg
+                    className="w-4 h-4 text-gray-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                )}
               </div>
 
               {/* Description with HTML */}
               {instructor.description && (
                 <div
-                  className="text-gray-700 text-sm leading-relaxed mb-2"
+                  className="text-gray-700 text-sm font-medium leading-relaxed mb-2"
                   dangerouslySetInnerHTML={{ __html: instructor.description }}
                 />
               )}
