@@ -1,4 +1,4 @@
-import CourseMeta from "@/components/CourseMeta";
+import CourseMeta from "@/components/Course/CourseMeta";
 import { fetchProduct } from "@/lib/api";
 
 export default async function ProductPage({ params }: { params: Promise<{ lang: "en" | "bn" }> }) {
