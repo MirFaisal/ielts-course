@@ -43,7 +43,7 @@ export default function SectionRenderer({ section }: SectionRendererProps) {
       case "features":
         return <FeaturesSection features={section.values} />;
       case "pointers":
-        return <PointersSection />;
+        return <PointersSection pointers={section.values} />;
       case "testimonials":
         return <TestimonialsSection />;
       case "faq":
