@@ -1,16 +1,5 @@
+import { AboutSectionProps } from "@/types/componentTypes";
 import { useState } from "react";
-
-interface AboutData {
-  id?: string;
-  title?: string;
-  description?: string;
-  icon?: string;
-  [key: string]: unknown;
-}
-
-interface AboutSectionProps {
-  about?: AboutData[];
-}
 
 export default function AboutSection({ about = [] }: AboutSectionProps) {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());

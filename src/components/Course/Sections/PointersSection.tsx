@@ -1,14 +1,4 @@
-interface SectionValue {
-  id?: string;
-  text?: string;
-  color?: string;
-  icon?: string;
-  [key: string]: unknown;
-}
-
-interface PointersSectionProps {
-  pointers?: SectionValue[];
-}
+import { PointersSectionProps } from "@/types/componentTypes";
 
 export default function PointersSection({ pointers = [] }: PointersSectionProps) {
   return (

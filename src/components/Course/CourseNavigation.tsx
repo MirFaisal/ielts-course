@@ -1,22 +1,11 @@
 "use client";
+import { CourseNavigationProps } from "@/types/sectionTypes";
 import { useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-interface AnchorItem {
-  key: string;
-  href: string;
-  title: string;
-}
-
-interface CourseNavigationProps {
-  anchorItems: AnchorItem[];
-  activeSection: string;
-  onSectionClick: (sectionType: string) => void;
-}
 
 export default function CourseNavigation({
   anchorItems,

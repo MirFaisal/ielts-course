@@ -1,3 +1,4 @@
+import { Section } from "@/types/productTypes";
 import AboutSection from "./Sections/AboutSection";
 import DefaultSection from "./Sections/DefaultSection";
 import FaqSection from "./Sections/FaqSection";
@@ -8,30 +9,6 @@ import InstructorsSection from "./Sections/InstructorsSection";
 import PointersSection from "./Sections/PointersSection";
 import TestimonialsSection from "./Sections/TestimonialsSection";
 import SectionWrapper from "./SectionWrapper";
-
-interface SectionValue {
-  id?: string;
-  name?: string;
-  image?: string;
-  description?: string;
-  short_description?: string;
-  title?: string;
-  subtitle?: string;
-  icon?: string;
-  text?: string;
-  profile_image?: string;
-  testimonial?: string;
-  question?: string;
-  answer?: string;
-  [key: string]: unknown;
-}
-
-interface Section {
-  type: string;
-  name: string;
-  description?: string;
-  values: SectionValue[];
-}
 
 interface SectionRendererProps {
   section: Section;

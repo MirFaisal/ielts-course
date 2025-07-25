@@ -1,10 +1,4 @@
-import { ReactNode } from "react";
-
-interface SectionWrapperProps {
-  sectionId: string;
-  title?: string;
-  children: ReactNode;
-}
+import { SectionWrapperProps } from "@/types/sectionTypes";
 
 export default function SectionWrapper({ sectionId, title, children }: SectionWrapperProps) {
   return (

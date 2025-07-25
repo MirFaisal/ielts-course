@@ -1,16 +1,5 @@
+import { FeaturesSectionProps } from "@/types/componentTypes";
 import Image from "next/image";
-
-interface SectionValue {
-  id?: string;
-  title?: string;
-  subtitle?: string;
-  icon?: string;
-  [key: string]: unknown;
-}
-
-interface FeaturesSectionProps {
-  features?: SectionValue[];
-}
 
 export default function FeaturesSection({ features = [] }: FeaturesSectionProps) {
   return (

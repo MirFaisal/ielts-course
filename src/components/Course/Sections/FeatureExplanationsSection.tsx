@@ -1,18 +1,5 @@
+import { FeatureExplanationsSectionProps } from "@/types/componentTypes";
 import Image from "next/image";
-
-interface FeatureExplanationData {
-  id?: string;
-  title?: string;
-  checklist?: string[];
-  file_type?: string;
-  file_url?: string;
-  video_thumbnail?: string;
-  [key: string]: unknown;
-}
-
-interface FeatureExplanationsSectionProps {
-  featureExplanations?: FeatureExplanationData[];
-}
 
 export default function FeatureExplanationsSection({
   featureExplanations = [],

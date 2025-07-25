@@ -1,29 +1,5 @@
+import { GroupJoinEngagementSectionProps } from "@/types/componentTypes";
 import Image from "next/image";
-
-interface EngagementData {
-  id?: string;
-  title?: string;
-  description?: string;
-  title_color?: string;
-  description_color?: string;
-  thumbnail?: string;
-  top_left_icon_img?: string;
-  background?: {
-    image?: string;
-    primary_color?: string;
-    secondary_color?: string;
-  };
-  cta?: {
-    text?: string;
-    clicked_url?: string;
-    color?: string;
-  };
-  [key: string]: unknown;
-}
-
-interface GroupJoinEngagementSectionProps {
-  engagements?: EngagementData[];
-}
 
 export default function GroupJoinEngagementSection({ engagements = [] }: GroupJoinEngagementSectionProps) {
   return (

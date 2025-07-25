@@ -1,19 +1,5 @@
+import { InstructorsSectionProps } from "@/types/componentTypes";
 import Image from "next/image";
-
-interface SectionValue {
-  id?: string;
-  name?: string;
-  image?: string;
-  description?: string;
-  short_description?: string;
-  slug?: string;
-  has_instructor_page?: boolean;
-  [key: string]: unknown;
-}
-
-interface InstructorsSectionProps {
-  instructors?: SectionValue[];
-}
 
 export default function InstructorsSection({ instructors = [] }: InstructorsSectionProps) {
   return (

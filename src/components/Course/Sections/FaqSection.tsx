@@ -1,17 +1,7 @@
 "use client";
 
+import { FAQSectionProps } from "@/types/componentTypes";
 import { useState } from "react";
-
-interface FAQData {
-  id?: string;
-  question?: string;
-  answer?: string;
-  [key: string]: unknown;
-}
-
-interface FAQSectionProps {
-  faqs?: FAQData[];
-}
 
 export default function FAQSection({ faqs = [] }: FAQSectionProps) {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
