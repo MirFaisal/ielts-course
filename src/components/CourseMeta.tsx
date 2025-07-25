@@ -35,7 +35,7 @@ const CourseMeta = ({ courseData }: { courseData: Course }) => {
           {/* Course Image and cta */}
           <div className="col-span-2 h-full relative">
             <div className="absolute top-[50px] left-0 w-full flex items-center justify-center">
-              <CourseVisuals media={courseData.media} />
+              <CourseVisuals media={courseData.media} cta_text={courseData.cta_text} checklist={courseData.checklist} />
             </div>
           </div>
         </div>

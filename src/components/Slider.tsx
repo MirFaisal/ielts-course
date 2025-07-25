@@ -90,14 +90,14 @@ export default function Slider({ media }: { media: MediaItem[] }) {
 
       {/* Thumbnail Navigator */}
       <div className="w-full overflow-hidden px-3">
-        <div className="flex gap-2 justify-center">
+        <div className="flex gap-[2px] justify-center">
           {filteredMedia.map((item: MediaItem, i: number) => (
             <div key={i} onClick={() => mainSwiper?.slideTo(i)}>
               <Image
                 src={item.thumbnail_url || item.resource_value}
                 alt={item.name}
-                width={50}
-                height={35}
+                width={60}
+                height={40}
                 className={`rounded-lg border-2 cursor-pointer object-cover transition-all duration-200 ${
                   activeIndex === i
                     ? "border-green-500 ring-2 ring-green-200 shadow-md"
