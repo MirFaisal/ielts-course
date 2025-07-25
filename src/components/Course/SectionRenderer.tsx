@@ -38,7 +38,7 @@ export default function SectionRenderer({ section }: SectionRendererProps) {
   const renderSectionContent = () => {
     switch (section.type) {
       case "instructors":
-        return <InstructorsSection />;
+        return <InstructorsSection instructors={section.values} />;
       case "features":
         return <FeaturesSection />;
       case "pointers":
