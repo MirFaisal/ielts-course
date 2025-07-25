@@ -1,3 +1,4 @@
+import CourseDetails from "@/components/Course/CourseDetails";
 import CourseMeta from "@/components/Course/CourseMeta";
 import { fetchProduct } from "@/lib/api";
 
@@ -9,7 +10,7 @@ export default async function ProductPage({ params }: { params: Promise<{ lang: 
   return (
     <>
       <CourseMeta courseData={data} />
-      <div className="w-full h-[1900px]"></div>
+      <CourseDetails courseData={data} />
     </>
   );
 }
