@@ -24,7 +24,7 @@ export default function SectionRenderer({ section }: SectionRendererProps) {
       case "pointers":
         return <PointersSection pointers={section.values} />;
       case "testimonials":
-        return <TestimonialsSection />;
+        return <TestimonialsSection testimonials={section.values} />;
       case "faq":
         return <FaqSection faqs={section.values} />;
       case "group_join_engagement":

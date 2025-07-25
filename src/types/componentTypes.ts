@@ -95,10 +95,13 @@ export interface FeatureExplanationsSectionProps {
   featureExplanations?: FeatureExplanationData[];
 }
 
-// Testimonials Section Types (placeholder for future implementation)
+// Testimonials Section Types
 export interface TestimonialData extends BaseSection {
   profile_image?: string;
   testimonial?: string;
+  thumb?: string;
+  video_type?: string;
+  video_url?: string;
 }
 
 export interface TestimonialsSectionProps {
