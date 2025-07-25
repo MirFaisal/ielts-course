@@ -6,7 +6,6 @@ export default async function ProductPage({ params }: { params: Promise<{ lang: 
   const { data } = await fetchProduct(lang);
 
   console.log("Product Data:", data);
-  // console.log("Instructors:", instructors);
   return (
     <>
       <CourseMeta courseData={data} />
