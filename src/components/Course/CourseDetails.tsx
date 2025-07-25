@@ -34,7 +34,7 @@ export default function CourseDetails({ courseData }: { courseData: Course }) {
   const visibleSections = useMemo(
     () =>
       courseData.sections
-        ?.filter((section) => section.name && section.name.trim() !== "")
+        ?.filter((section) => section.values.length > 0 && section.type !== "offers")
         ?.sort((a, b) => a.order_idx - b.order_idx) || [],
     [courseData.sections],
   );
@@ -42,11 +42,13 @@ export default function CourseDetails({ courseData }: { courseData: Course }) {
   // Generate anchor items from sections
   const anchorItems = useMemo(
     () =>
-      visibleSections.map((section) => ({
-        key: section.type,
-        href: `#${section.type}`,
-        title: section.name,
-      })),
+      visibleSections
+        .filter((section) => section.name && section.name.trim() !== "")
+        .map((section) => ({
+          key: section.type,
+          href: `#${section.type}`,
+          title: section.name,
+        })),
     [visibleSections],
   );
 
