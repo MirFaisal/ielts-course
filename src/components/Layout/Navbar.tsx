@@ -101,7 +101,7 @@ const Navbar = () => {
             onClick={toggleLanguage}
             className="border px-2 py-1 rounded flex items-center gap-1 text-sm hover:bg-gray-50 transition-colors">
             <MdLanguage />
-            {currentLang.toUpperCase()}
+            {currentLang.toUpperCase() === "EN" ? "BN" : "EN"}
           </button>
           <div className="flex items-center text-green-600 text-sm font-semibold gap-1">
             <FaPhoneAlt size={14} />

@@ -8,7 +8,7 @@ export default function Banner() {
       <div className="relative">
         <div className="relative w-full h-[150px]">
           <Image
-            src="https://cdn.10minuteschool.com/images/dasktop_banner_1753270611489.png"
+            src="https://cdn.10minuteschool.com/images/dasktop_banner_1753270611489.png?w=1800?w=1800&h=150"
             alt="Banner Image"
             fill
             style={{ objectFit: "cover" }}
