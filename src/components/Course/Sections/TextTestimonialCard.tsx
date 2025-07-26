@@ -35,9 +35,6 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
   const shouldTruncate = fullText.length > 150;
   const displayText = isExpanded ? fullText : truncateText(fullText, 150);
 
-  console.log("Full Text:", fullText);
-  console.log("Display Text:", displayText);
-
   return (
     <div className="testimonial bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm h-full">
       {/* Text Content */}

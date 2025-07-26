@@ -15,9 +15,28 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function Slider({ media }: { media: MediaItem[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
+  const [playingVideos, setPlayingVideos] = useState<Set<number>>(new Set());
 
   // Filter out sqr_img items
-  const filteredMedia = media.filter((item) => item.name !== "sqr_img");
+  const filteredMedia = media.filter((item) => item.name !== "sqr_img" && item.name !== "thumbnail");
+
+  const toggleVideoPlay = (videoIndex: number) => {
+    setPlayingVideos((prev) => {
+      const isCurrentlyPlaying = prev.has(videoIndex);
+
+      if (isCurrentlyPlaying) {
+        // Stop the video - remove from playing list
+        const updated = new Set(prev);
+        updated.delete(videoIndex);
+        return updated;
+      } else {
+        // Start the video - add to playing list
+        const updated = new Set(prev);
+        updated.add(videoIndex);
+        return updated;
+      }
+    });
+  };
 
   return (
     <div className="w-full max-w-5xl mx-auto">
@@ -41,13 +60,46 @@ export default function Slider({ media }: { media: MediaItem[] }) {
               <div className="bg-white text-center">
                 {item.resource_type === "video" ? (
                   <div className="relative w-full aspect-video">
-                    <iframe
-                      src={`https://www.youtube.com/embed/${item.resource_value}`}
-                      title={item.name}
-                      className="w-full h-full"
-                      allowFullScreen
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    />
+                    {!playingVideos.has(i) ? (
+                      /* Thumbnail View */
+                      <div
+                        className="relative w-full aspect-video cursor-pointer group bg-gray-100 overflow-hidden"
+                        onClick={() => toggleVideoPlay(i)}>
+                        <Image
+                          src={item.thumbnail_url}
+                          alt={item.name}
+                          className="w-full h-full object-cover"
+                          fill
+                        />
+
+                        {/* Play Button Overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/40 bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-200">
+                          <div className="bg-white bg-opacity-90 rounded-full p-4 shadow-lg transition-all duration-200 transform group-hover:scale-110">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="36"
+                              height="36"
+                              fill="none"
+                              viewBox="0 0 56 56">
+                              <circle cx="28" cy="28" r="28" fill="#fff" fillOpacity="0.5"></circle>
+                              <circle cx="27.999" cy="28" r="25.415" fill="#fff"></circle>
+                              <path
+                                fill="#1CAB55"
+                                d="M37.492 26.268c1.334.77 1.334 2.694 0 3.464l-12.738 7.355c-1.334.77-3-.193-3-1.732v-14.71c0-1.539 1.666-2.501 3-1.732l12.738 7.355z"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      /* YouTube Iframe */
+                      <iframe
+                        src={`https://www.youtube.com/embed/${item.resource_value}?autoplay=1`}
+                        title={item.name}
+                        className="w-full h-full rounded-md"
+                        allowFullScreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      />
+                    )}
                   </div>
                 ) : (
                   <Image
@@ -64,26 +116,32 @@ export default function Slider({ media }: { media: MediaItem[] }) {
         </Swiper>
 
         {/* Custom Navigation Buttons */}
-        <div className="swiper-button-prev-custom absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg cursor-pointer transition-all duration-200">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+        <div className="swiper-button-prev-custom absolute left-2 top-1/2 transform -translate-y-1/2 z-10 rounded-full shadow-lg cursor-pointer transition-all duration-200">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            strokeWidth="0"
+            viewBox="0 0 512 512"
+            color="white"
+            style={{ color: "white" }}
+            height="25"
+            width="25"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z"></path>
           </svg>
         </div>
-        <div className="swiper-button-next-custom absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg cursor-pointer transition-all duration-200">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M9 18L15 12L9 6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+        <div className="swiper-button-next-custom absolute right-2 top-1/2 transform -translate-y-1/2 z-10 rounded-full shadow-lg cursor-pointer transition-all duration-200">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            strokeWidth="0"
+            viewBox="0 0 512 512"
+            color="white"
+            style={{ color: "white" }}
+            height="25"
+            width="25"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"></path>
           </svg>
         </div>
       </div>
