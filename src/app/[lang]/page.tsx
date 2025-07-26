@@ -1,3 +1,4 @@
+import Banner from "@/components/Course/Banner";
 import CourseDetails from "@/components/Course/CourseDetails";
 import CourseMeta from "@/components/Course/CourseMeta";
 import { fetchProduct } from "@/lib/api";
@@ -9,6 +10,7 @@ export default async function ProductPage({ params }: { params: Promise<{ lang: 
   console.log("Product Data:", data);
   return (
     <>
+      <Banner />
       <CourseMeta courseData={data} />
       <CourseDetails courseData={data} />
     </>
