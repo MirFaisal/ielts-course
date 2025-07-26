@@ -15,7 +15,7 @@ export default function CourseNavigation({
   const [, setSwiperRef] = useState<SwiperType | null>(null);
 
   return (
-    <div className="sticky top-[70px] z-[200] w-full bg-white border-b border-gray-200 mb-4">
+    <div className="sticky top-[70px] z-40 w-full bg-white border-b border-gray-200 mb-4">
       <div className="max-w-5xl relative px-4 py-3">
         <Swiper
           onSwiper={setSwiperRef}

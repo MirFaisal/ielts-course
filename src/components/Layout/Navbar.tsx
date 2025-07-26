@@ -67,7 +67,7 @@ const Navbar = () => {
 
           {/* Suggestions popup */}
           {isSearchFocused && (
-            <div className="absolute z-50 top-full left-0 w-full bg-white rounded-xl shadow-lg mt-2 border border-gray-200 overflow-hidden">
+            <div className="absolute z-auto top-full left-0 w-full bg-white rounded-xl shadow-lg mt-2 border border-gray-200 overflow-hidden">
               <p className="text-gray-600 text-xs font-bold px-4 pt-3 pb-1">জনপ্রিয় অনুসন্ধান</p>
               <ul>
                 {suggestions.map((item, i) => (
