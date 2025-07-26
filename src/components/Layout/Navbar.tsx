@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
+import { IoIosArrowDown } from "react-icons/io";
 import { MdLanguage } from "react-icons/md";
 
 const navItems = ["ক্লাস ৬-১২", "ভর্তি পরীক্ষা", "অনলাইন ব্যাচ", "ইংলিশ সেন্টার"];
@@ -86,8 +87,12 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-4 font-medium text-gray-700">
           {navItems.map((item, idx) => (
             <div key={idx} className="relative group cursor-pointer">
-              <span className="text-gray-700 text-[12px]">{item}</span>
-              <span className="ml-1 text-xs">▼</span>
+              <div className="flex items-center gap-1">
+                <span className="text-gray-700 text-[12px]">{item}</span>
+                <span className="ml-1 text-xs">
+                  <IoIosArrowDown />
+                </span>
+              </div>
               <div className="absolute hidden group-hover:block top-full left-0 mt-2 bg-white shadow-md rounded-lg min-w-[200px] z-40 p-2">
                 <p className="text-xs text-gray-500 px-2 py-1">ড্রপডাউন কন্টেন্ট</p>
               </div>
