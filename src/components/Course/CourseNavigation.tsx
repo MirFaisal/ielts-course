@@ -14,18 +14,23 @@ export default function CourseNavigation({
 }: CourseNavigationProps) {
   const [, setSwiperRef] = useState<SwiperType | null>(null);
 
+  // Memoize the swiper options to prevent unnecessary re-renders
+  const swiperOptions = {
+    spaceBetween: 10,
+    slidesPerView: "auto" as const,
+    navigation: {
+      nextEl: ".nav-button-next",
+      prevEl: ".nav-button-prev",
+    },
+    modules: [Navigation],
+  };
+
   return (
-    <div className="sticky top-[70px] z-40 w-full bg-white border-b border-gray-200 mb-4">
-      <div className="max-w-5xl relative px-4 py-3">
+    <div className="sticky top-[70px] z-40 w-full bg-white border-b border-gray-200 mb-4 shadow-sm">
+      <div className="max-w-5xl relative px-4 py-3 mx-auto">
         <Swiper
           onSwiper={setSwiperRef}
-          spaceBetween={10}
-          slidesPerView="auto"
-          navigation={{
-            nextEl: ".nav-button-next",
-            prevEl: ".nav-button-prev",
-          }}
-          modules={[Navigation]}
+          {...swiperOptions}
           breakpoints={{
             320: {
               slidesPerView: 2,
