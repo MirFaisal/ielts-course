@@ -138,7 +138,10 @@ const Navbar = () => {
             {navItems.map((item, idx) => (
               <div key={idx} className="flex justify-between items-center">
                 <span>{item}</span>
-                <span className="text-xs">▼</span>
+                <span className="text-xs">
+                  {" "}
+                  <IoIosArrowDown />
+                </span>
               </div>
             ))}
           </div>
