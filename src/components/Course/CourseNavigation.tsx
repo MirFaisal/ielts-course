@@ -64,7 +64,7 @@ export default function CourseNavigation({
         </Swiper>
 
         {/* Custom Navigation Buttons */}
-        <div className="nav-button-prev absolute -left-6 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-md cursor-pointer transition-all duration-200 border border-gray-200">
+        <div className="nav-button-prev absolute -left-6 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white rounded-full p-2 shadow-md cursor-pointer transition-all duration-200 border border-gray-100">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M15 18L9 12L15 6"
@@ -75,7 +75,7 @@ export default function CourseNavigation({
             />
           </svg>
         </div>
-        <div className="nav-button-next absolute -right-6 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-md cursor-pointer transition-all duration-200 border border-gray-200">
+        <div className="nav-button-next absolute -right-6 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white rounded-full p-2 shadow-md cursor-pointer transition-all duration-200 border border-gray-100">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M9 18L15 12L9 6"
