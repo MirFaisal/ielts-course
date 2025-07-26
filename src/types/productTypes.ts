@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface OldInfo {
   cat_id: number;
   course_id: number;

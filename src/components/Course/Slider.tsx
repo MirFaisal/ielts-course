@@ -66,7 +66,10 @@ export default function Slider({ media }: { media: MediaItem[] }) {
                         className="relative w-full aspect-video cursor-pointer group bg-gray-100 overflow-hidden"
                         onClick={() => toggleVideoPlay(i)}>
                         <Image
-                          src={item.thumbnail_url}
+                          src={
+                            item.thumbnail_url ||
+                            "https://cdn.10minuteschool.com/images/thumbnails/IELTS_new_16_9.png"
+                          }
                           alt={item.name}
                           className="w-full h-full object-cover"
                           fill

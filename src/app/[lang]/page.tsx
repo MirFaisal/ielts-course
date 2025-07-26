@@ -17,6 +17,10 @@ export default async function ProductPage({ params }: { params: Promise<{ lang: 
   );
 }
 
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "bn" }];
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const data = await fetchProduct(lang as "en" | "bn");

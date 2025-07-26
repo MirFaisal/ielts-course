@@ -7,7 +7,7 @@ export async function fetchProduct(lang: "en" | "bn") {
         accept: "application/json",
       },
       next: {
-        revalidate: 3600,
+        revalidate: 3600, // ISR: Revalidate every hour (3600 seconds)
       },
     },
   );
