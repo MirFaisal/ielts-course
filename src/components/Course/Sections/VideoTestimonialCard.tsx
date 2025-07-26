@@ -33,11 +33,12 @@ export default function VideoTestimonialCard({
 
             {/* Play Button Overlay */}
             <div className="absolute inset-0 flex items-center justify-center bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-200">
-              <div className="bg-white bg-opacity-90 rounded-full p-4 shadow-lg transition-all duration-200 transform group-hover:scale-110">
-                <svg className="w-8 h-8 text-red-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
+              <Image
+                src="https://10minuteschool.com/images/annual_exam/play_icon_2.svg"
+                alt="Play Video"
+                width={100}
+                height={100}
+              />
             </div>
           </div>
         ) : (
