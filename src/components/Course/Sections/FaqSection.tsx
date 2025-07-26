@@ -37,7 +37,7 @@ export default function FAQSection({ faqs = [] }: FAQSectionProps) {
                 className={`w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between ${
                   !isOpen && index < displayedFAQs.length - 1 ? "border-b border-dashed border-gray-200" : ""
                 }`}>
-                <div className="text-base font-medium text-gray-900 pr-4">{faq.question}</div>
+                <div className="text-base font-bold text-gray-900 pr-4">{faq.question}</div>
 
                 {/* Arrow Icon */}
                 <div className="flex-shrink-0">
