@@ -7,7 +7,6 @@ export default async function ProductPage({ params }: { params: Promise<{ lang: 
   const { lang } = await params;
   const { data } = await fetchProduct(lang);
 
-  console.log("Product Data:", data);
   return (
     <>
       <Banner />
