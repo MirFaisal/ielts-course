@@ -6,7 +6,9 @@ export async function fetchProduct(lang: "en" | "bn") {
         "X-TENMS-SOURCE-PLATFORM": "web",
         accept: "application/json",
       },
-      cache: "no-store",
+      next: {
+        revalidate: 3600,
+      },
     },
   );
   if (!res.ok) throw new Error("Failed to fetch product");
