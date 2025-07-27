@@ -67,13 +67,13 @@ export default function TestimonialsSection({ testimonials = [] }: TestimonialsS
       </Swiper>
 
       {/* Custom Navigation Buttons */}
-      <div className="testimonial-button-prev absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 rounded-full p-2 shadow-lg cursor-pointer transition-all duration-200 border border-gray-200">
+      <div className="testimonial-button-prev absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 rounded-full p-2 shadow-lg cursor-pointer transition-all duration-200 border border-gray-200 hidden md:block">
         <svg className="w-5 h-5 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </div>
 
-      <div className="testimonial-button-next absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 bg-black/50  rounded-full p-2 shadow-lg cursor-pointer transition-all duration-200 border border-gray-200">
+      <div className="testimonial-button-next absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 bg-black/50  rounded-full p-2 shadow-lg cursor-pointer transition-all duration-200 border border-gray-200 hidden md:block">
         <svg className="w-5 h-5 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>

@@ -23,7 +23,7 @@ export default function FAQSection({ faqs = [] }: FAQSectionProps) {
 
   return (
     <div className="relative">
-      <div className="border border-gray-200 rounded-lg overflow-hidden bg-white">
+      <div className="md:border border-gray-200 rounded-lg overflow-hidden bg-white">
         {displayedFAQs.map((faq, index) => {
           if (!faq.id || !faq.question || !faq.answer) return null;
 
@@ -34,10 +34,10 @@ export default function FAQSection({ faqs = [] }: FAQSectionProps) {
               {/* Accordion Header */}
               <button
                 onClick={() => toggleItem(faq.id!)}
-                className={`w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between ${
+                className={`w-full px-2 md:px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between ${
                   !isOpen && index < displayedFAQs.length - 1 ? "border-b border-dashed border-gray-200" : ""
                 }`}>
-                <div className="text-base font-bold text-gray-900 pr-4">{faq.question}</div>
+                <div className="text-sm md:text-base font-semibold text-gray-900 pr-4">{faq.question}</div>
 
                 {/* Arrow Icon */}
                 <div className="flex-shrink-0">

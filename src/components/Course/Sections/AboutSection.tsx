@@ -15,7 +15,7 @@ export default function AboutSection({ about = [] }: AboutSectionProps) {
   };
 
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden bg-white">
+    <div className="md:border border-gray-200 rounded-lg overflow-hidden bg-white">
       {about.map((item, index) => {
         const itemId = item.id || index.toString();
         const isOpen = openItems.has(itemId);
@@ -25,11 +25,11 @@ export default function AboutSection({ about = [] }: AboutSectionProps) {
             {/* Accordion Header */}
             <button
               onClick={() => toggleItem(itemId)}
-              className={`w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between ${
+              className={`w-full px-2 md:px-6 py-4 text-left hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between ${
                 !isOpen && index < about.length - 1 ? "border-b border-dashed border-gray-200" : ""
               }`}>
               <div
-                className="text-base flex justify-baseline font-medium text-gray-900 pr-4"
+                className="text-sm md:text-base flex justify-baseline text-gray-900 pr-4"
                 dangerouslySetInnerHTML={{ __html: item.title || "" }}></div>
 
               {/* Arrow Icon */}

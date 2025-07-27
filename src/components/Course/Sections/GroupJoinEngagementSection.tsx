@@ -8,7 +8,7 @@ export default function GroupJoinEngagementSection({ engagements = [] }: GroupJo
         <div key={engagement.id || index} className="relative">
           {/* Card Container */}
           <div
-            className="relative rounded-2xl overflow-hidden p-8 min-h-[240px] flex items-center"
+            className="relative rounded-2xl overflow-hidden p-4 md:p-8 min-h-[240px] flex items-center"
             style={{
               backgroundImage: engagement.background?.image
                 ? `linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url(${engagement.background.image})`
@@ -66,7 +66,7 @@ export default function GroupJoinEngagementSection({ engagements = [] }: GroupJo
 
               {/* Right Thumbnail */}
               {engagement.thumbnail && (
-                <div className="flex-shrink-0 ml-8">
+                <div className="flex-shrink-0 ml-8 hidden md:block">
                   <div className="relative w-80 h-44 rounded-lg overflow-hidden shadow-lg">
                     <Image
                       src={engagement.thumbnail}

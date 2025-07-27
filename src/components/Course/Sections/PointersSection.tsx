@@ -2,7 +2,7 @@ import { PointersSectionProps } from "@/types/componentTypes";
 
 export default function PointersSection({ pointers = [] }: PointersSectionProps) {
   return (
-    <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+    <div className="bg-gray-50 md:border border-gray-200 rounded-lg md:p-6 mt-2 md:mt-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {pointers.map((pointer, index) => (
           <div key={pointer.id || index} className="flex items-start space-x-3">

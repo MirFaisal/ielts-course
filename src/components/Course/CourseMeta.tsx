@@ -4,8 +4,8 @@ import CourseVisuals from "./CourseVisuals";
 
 const CourseMeta = ({ courseData }: { courseData: Course }) => {
   return (
-    <>
-      <div className="w-full bg-[url('/background/course_meta_bg.jpeg')] bg-cover bg-center h-64 flex items-center justify-center">
+    <div className="hidden md:block">
+      <div className="w-full bg-[url('/background/course_meta_bg.jpeg')] bg-cover bg-center h-64 flex items-center justify-center ">
         <div className="max-w-6xl mx-auto grid grid-cols-6 justify-between items-center h-full gap-4">
           {/* Course Title and Rating */}
           <div className="col-span-4 h-full flex items-center justify-center">
@@ -46,7 +46,7 @@ const CourseMeta = ({ courseData }: { courseData: Course }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

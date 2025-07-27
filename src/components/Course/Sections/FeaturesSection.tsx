@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function FeaturesSection({ features = [] }: FeaturesSectionProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 bg-gray-900 rounded-lg">
+    <div className="grid grid-cols-1 md:grid-cols-2 bg-gray-900 rounded-lg px-2 md:px-0">
       {features.map((feature, index) => (
-        <div key={feature.id || index} className="text-white p-6">
+        <div key={feature.id || index} className="text-white p-4 md:p-6">
           <div className="flex items-start space-x-4">
             {/* Icon */}
             {feature.icon && (
@@ -17,11 +17,11 @@ export default function FeaturesSection({ features = [] }: FeaturesSectionProps)
             {/* Content */}
             <div className="flex-1">
               {/* Title */}
-              <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+              <h3 className="text-lg leading-[26px] font-semibold text-white mb-2">{feature.title}</h3>
 
               {/* Subtitle/Description */}
               {feature.subtitle && (
-                <p className="text-gray-300 text-sm leading-relaxed">{feature.subtitle}</p>
+                <p className="text-[#9CA3AF] text-sm leading-relaxed">{feature.subtitle}</p>
               )}
             </div>
           </div>

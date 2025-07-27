@@ -7,10 +7,10 @@ export default function InstructorsSection({ instructors = [] }: InstructorsSect
       {instructors.map((instructor, index) => (
         <div
           key={instructor.slug || instructor.id || index}
-          className="bg-white border border-gray-200 rounded-lg p-6">
+          className="bg-white md:border border-gray-200 rounded-lg md:p-6">
           <div className="flex items-start space-x-4">
             {/* Profile Image */}
-            <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+            <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0 mt-2 md:mt-0">
               <Image
                 src={instructor.image || "/api/placeholder/80/80"}
                 alt={instructor.name || "Instructor"}

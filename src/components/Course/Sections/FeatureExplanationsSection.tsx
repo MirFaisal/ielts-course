@@ -8,7 +8,7 @@ export default function FeatureExplanationsSection({
     <div className="border border-gray-200 rounded-lg">
       {featureExplanations.map((feature, index) => (
         <div key={feature.id || index}>
-          <div className="bg-white rounded-lg p-6 flex justify-between">
+          <div className="bg-white rounded-lg p-6 flex flex-col md:flex-row justify-between">
             <section className="flex-1">
               {/* Title */}
               <h3 className="text-base font-medium text-gray-900 mb-4">{feature.title}</h3>
@@ -44,7 +44,7 @@ export default function FeatureExplanationsSection({
             </section>
             {/* Image - Right Side */}
             {feature.file_url && (
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 mt-4 md:mt-0">
                 <div className="relative w-60 h-60 overflow-hidden">
                   <Image
                     src={feature.file_url}
