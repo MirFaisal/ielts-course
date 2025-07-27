@@ -125,7 +125,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
 
           {/* Contact Information */}
           <div className="col-span-2 lg:col-span-1 font-semibold">
