@@ -7,7 +7,7 @@ export default function Banner() {
     isShown && (
       <div className="relative w-full">
         {/* Desktop Banner */}
-        <div className="relative w-full h-[10vh] hidden lg:block">
+        <div className="relative w-full h-[150px] hidden lg:block">
           <Image
             src="https://cdn.10minuteschool.com/images/dasktop_banner_1753270611489.png"
             alt="Banner Image"
