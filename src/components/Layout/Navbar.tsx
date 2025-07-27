@@ -176,7 +176,6 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-
               {/* Navigation items */}
               <div className="flex-1 px-6 py-6 overflow-y-auto">
                 {navItems.map((item, idx) => (
@@ -188,8 +187,8 @@ const Navbar = () => {
                   </div>
                 ))}
               </div>
-
               {/* Bottom actions */}
+              Dcontent items Bactions{" "}
               <div className="p-6 border-t space-y-4 bg-gray-50">
                 <div className="flex items-center justify-between">
                   <button

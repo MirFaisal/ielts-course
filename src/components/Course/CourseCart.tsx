@@ -30,7 +30,7 @@ export default function CourseCart({
               . ৳1150 ছাড়
             </span>
           </div>
-          <button className="w-full py-3 bg-green-500 text-white font-semibold text-lg rounded-lg hover:bg-green-600 transition-colors duration-200 capitalize shadow-sm border-b-[7px] border-b-green-600">
+          <button className="w-full py-1 bg-green-500 text-white font-semibold text-lg rounded-lg hover:bg-green-600 transition-colors duration-200 capitalize shadow-sm border-b-[7px] border-b-green-600">
             {cta_text.value}
           </button>
         </div>
