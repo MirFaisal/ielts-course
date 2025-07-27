@@ -11,6 +11,6 @@ export async function fetchProduct(lang: "en" | "bn") {
       },
     },
   );
-   throw new Error("Could not retrieve product information");
+  if (!res.ok) throw new Error("Failed to fetch product");
   return res.json();
 }
