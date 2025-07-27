@@ -2,7 +2,9 @@ import Banner from "@/components/Course/Banner";
 import CourseDetails from "@/components/Course/CourseDetails";
 import CourseMeta from "@/components/Course/CourseMeta";
 import Recommendations from "@/components/Course/Recommendations";
+import RecommendationsLoading from "@/components/Course/RecommendationsLoading";
 import { fetchProduct } from "@/lib/api";
+import { Suspense } from "react";
 
 export default async function ProductPage({ params }: { params: Promise<{ lang: "en" | "bn" }> }) {
   const { lang } = await params;
@@ -15,7 +17,9 @@ export default async function ProductPage({ params }: { params: Promise<{ lang: 
       <Banner />
       <CourseMeta courseData={data} />
       <CourseDetails courseData={data} />
-      <Recommendations />
+      <Suspense fallback={<RecommendationsLoading />}>
+        <Recommendations />
+      </Suspense>
     </>
   );
 }
