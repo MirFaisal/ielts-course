@@ -18,7 +18,6 @@ Router)**, **TypeScript**, and **TailwindCSS**.
 - Product title & HTML description
 - Course instructors
 - Product trailer (YouTube)
-- Hardcoded price (1000)
 - CTA button text
 - Course layout
 - Learning outcomes
