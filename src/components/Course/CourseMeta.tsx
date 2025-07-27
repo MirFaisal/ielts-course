@@ -85,7 +85,7 @@ const CourseMetaResponsive = ({ courseData }: { courseData: Course }) => {
       },
       {
         threshold: 0.01,
-        rootMargin: "-200px 0px 0px 0px", // Fixed: negative margin to trigger when element starts going out of view
+        rootMargin: "-150px 0px 0px 0px", // Fixed: negative margin to trigger when element starts going out of view
       },
     );
 
