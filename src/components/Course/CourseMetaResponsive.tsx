@@ -53,7 +53,7 @@ const CourseMetaResponsive = ({ courseData }: { courseData: Course }) => {
         <div className="flex flex-col gap-2 p-3 mb-3">
           <h1 className="text-2xl font-bold text-white">{courseData.title}</h1>
           {/* Course Rating */}
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap items-center">
             <span className="inline-block">
               <Image
                 src="/elements/five_star.jpeg"
