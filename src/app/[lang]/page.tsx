@@ -1,17 +1,21 @@
 import Banner from "@/components/Course/Banner";
 import CourseDetails from "@/components/Course/CourseDetails";
 import CourseMeta from "@/components/Course/CourseMeta";
+import Recommendations from "@/components/Course/Recommendations";
 import { fetchProduct } from "@/lib/api";
 
 export default async function ProductPage({ params }: { params: Promise<{ lang: "en" | "bn" }> }) {
   const { lang } = await params;
   const { data } = await fetchProduct(lang);
 
+  // console.log("Course Data:", data);
+
   return (
     <>
       <Banner />
       <CourseMeta courseData={data} />
       <CourseDetails courseData={data} />
+      <Recommendations />
     </>
   );
 }

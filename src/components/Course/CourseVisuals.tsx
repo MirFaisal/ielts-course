@@ -43,35 +43,35 @@ const CourseVisuals = ({
       },
     );
 
-    // Footer observer to hide sticky when footer comes into view
-    const footerObserver = new IntersectionObserver(
+    // Recommendations observer to hide sticky when recommendations come into view
+    const RecommendationsObserver = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting) {
-          // When footer is visible, mark it as visible
+          // When recommendations are visible, mark it as visible
           setIsFooterVisible(true);
         } else {
-          // When footer is not visible, mark it as not visible
+          // When recommendations are not visible, mark it as not visible
           setIsFooterVisible(false);
         }
       },
       {
         threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px", // Trigger slightly before footer comes into view
+        rootMargin: "0px 0px -100px 0px", // Trigger slightly before recommendations come into view
       },
     );
 
     observer.observe(container);
 
-    // Find and observe the footer element
-    const footer = document.querySelector("footer");
-    if (footer) {
-      footerObserver.observe(footer);
+    // Find and observe the recommendations element
+    const recommendations = document.querySelector(".recommendations");
+    if (recommendations) {
+      RecommendationsObserver.observe(recommendations);
     }
 
     return () => {
       observer.disconnect();
-      footerObserver.disconnect();
+      RecommendationsObserver.disconnect();
     };
   }, []);
 

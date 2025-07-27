@@ -59,3 +59,36 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* Recommendations Swiper Styles */
+.recommendations-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #d1d5db;
+  opacity: 1;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+
+.recommendations-swiper-button-prev,
+.recommendations-swiper-button-next {
+  transition: all 0.3s ease;
+}
