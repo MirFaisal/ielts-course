@@ -195,15 +195,15 @@ const Footer = () => {
       </div>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-[160px] right-8 lg:bottom-4 lg:right-4 flex flex-col gap-3 z-40">
+      <div className="fixed bottom-[140px] right-4 lg:bottom-4 lg:right-4 flex flex-col gap-3 z-40">
         <Link
           href="#"
-          className="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-700 transition-colors">
+          className="lg:w-12 lg:h-12 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
           <FaCommentDots size={20} />
         </Link>
         <Link
           href="#"
-          className="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+          className="lg:w-12 lg:h-12 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
           <FaWhatsapp size={20} />
         </Link>
       </div>
