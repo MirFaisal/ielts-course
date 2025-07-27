@@ -1,3 +1,4 @@
+import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Hind_Siliguri, Inter } from "next/font/google";
@@ -41,6 +42,7 @@ export default function RootLayout({
         className={`${inter.variable} ${hindSiliguri.variable} ${geistSans.variable} ${geistMono.variable}  antialiased`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

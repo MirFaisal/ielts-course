@@ -98,7 +98,7 @@ export default function CourseDetails({ courseData }: { courseData: Course }) {
         />
 
         {/* Render sections dynamically */}
-        <div className="max-w-5xl mb-[200px]">
+        <div className="max-w-5xl mb-[300px]">
           {visibleSections.map((section) => (
             <SectionRenderer key={section.type} section={section} />
           ))}

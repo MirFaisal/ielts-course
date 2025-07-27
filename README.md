@@ -31,6 +31,7 @@ Router)**, **TypeScript**, and **TailwindCSS**.
 ## 📦 How to Run Locally
 
 ### Option 1: Clone and Run
+
 ```bash
 # Clone the repository
 git clone https://github.com/MirFaisal/ielts-course.git
@@ -46,6 +47,7 @@ npm run dev
 ```
 
 ### Option 2: Quick Start
+
 ```bash
 cd ielts-course
 npm install
