@@ -26,7 +26,7 @@ export default function CourseNavigation({
   };
 
   return (
-    <div className="sticky top-[70px] z-40 w-full bg-white border-b border-gray-200 mb-4 shadow-sm hidden md:block">
+    <div className="sticky top-[70px] z-40 w-full bg-white border-b border-gray-200 mb-4 hidden md:block">
       <div className="max-w-5xl relative px-4 py-3 mx-auto">
         <Swiper
           onSwiper={setSwiperRef}
