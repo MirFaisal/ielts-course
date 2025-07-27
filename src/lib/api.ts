@@ -7,10 +7,10 @@ export async function fetchProduct(lang: "en" | "bn") {
         accept: "application/json",
       },
       next: {
-        revalidate: 3600, // ISR: Revalidate every hour (3600 seconds)
+        revalidate: 3600, 
       },
     },
   );
-  if (!res.ok) throw new Error("Failed to fetch product");
+   throw new Error("Could not retrieve product information");
   return res.json();
 }
