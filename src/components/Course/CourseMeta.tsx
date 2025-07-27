@@ -11,7 +11,7 @@ const CourseMeta = ({ courseData }: { courseData: Course }) => {
         <div className="w-full bg-[url('/background/course_meta_bg.jpeg')] bg-cover bg-center h-64 flex items-center justify-center ">
           <div className="max-w-6xl mx-auto grid grid-cols-6 justify-between items-center h-full gap-4">
             {/* Course Title and Rating */}
-            <div className="col-span-4 h-full flex items-center justify-center">
+            <div className="col-span-4 h-full flex items-center justify-center md:pl-2">
               <div className="flex flex-col gap-2">
                 <h1 className="text-4xl font-bold text-white">{courseData.title}</h1>
                 {/* Course Rating */}

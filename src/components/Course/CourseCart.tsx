@@ -16,7 +16,7 @@ export default function CourseCart({
 }) {
   return (
     <>
-      <div className="w-full bg-white border border-gray-200 p-1">
+      <div className="w-[290px] lg:w-full bg-white border border-gray-200 p-1">
         {enableSlider && <Slider media={media} />}
         {/* Course CTA Button */}
         <div className="px-3 flex flex-col gap-3 mt-4">

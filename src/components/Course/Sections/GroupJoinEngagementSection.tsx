@@ -67,7 +67,7 @@ export default function GroupJoinEngagementSection({ engagements = [] }: GroupJo
               {/* Right Thumbnail */}
               {engagement.thumbnail && (
                 <div className="flex-shrink-0 ml-8 hidden md:block">
-                  <div className="relative w-80 h-44 rounded-lg overflow-hidden shadow-lg">
+                  <div className="relative w-50 lg:w-80 h-44 rounded-lg overflow-hidden shadow-lg">
                     <Image
                       src={engagement.thumbnail}
                       alt={engagement.title || "Engagement"}
