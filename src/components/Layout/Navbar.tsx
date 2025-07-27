@@ -141,7 +141,7 @@ const Navbar = () => {
 
       {/* Mobile Left Drawer */}
       {isMobileOpen && (
-        <div className="lg:hidden fixed inset-0 z-50">
+        <div className="lg:hidden fixed inset-0 z-[50]">
           {/* Background overlay */}
           <div
             className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
