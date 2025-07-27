@@ -84,11 +84,23 @@ const CourseMetaResponsive = ({ courseData }: { courseData: Course }) => {
       </div>
       <div
         ref={stickyRef}
-        className={`fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50 shadow-2xl transition-transform duration-300 ease-in-out ${
+        className={`fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50 transition-transform duration-300 ease-in-out ${
           isSticky && isOutOfView ? "translate-y-0" : "translate-y-full"
-        }`}>
+        }`}
+        style={{
+          boxShadow: "0 -25px 50px -12px rgba(0, 0, 0, 0.25), 0 -10px 20px -5px rgba(0, 0, 0, 0.1)",
+        }}>
         <div className="px-3 flex flex-col gap-3 py-3">
-          <span className="text-3xl font-semibold">৳1000</span>
+          <div className="flex items-center gap-2">
+            <span className="text-3xl font-semibold text-gray-900">৳3850</span>
+            <span className="text-lg text-gray-500 line-through">৳5000</span>
+            <span className="relative bg-orange-400 text-white px-3 py-[2.8px] text-sm font-medium rounded ml-2">
+              <span className="absolute top-[1px] left-[1px] transform -translate-x-full">
+                <span className="block w-0 h-0 border-r-[12px] border-r-orange-400 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent"></span>
+              </span>
+              . ৳1150 ছাড়
+            </span>
+          </div>
           <button className="w-full py-3 bg-green-500 text-white font-semibold text-lg rounded-lg hover:bg-green-600 transition-colors duration-200 capitalize shadow-sm border-b-[7px] border-b-green-600">
             {courseData.cta_text.value}
           </button>

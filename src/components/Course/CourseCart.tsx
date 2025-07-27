@@ -20,7 +20,16 @@ export default function CourseCart({
         {enableSlider && <Slider media={media} />}
         {/* Course CTA Button */}
         <div className="px-3 flex flex-col gap-3 mt-4">
-          <span className="text-3xl font-semibold">৳1000</span>
+          <div className="flex items-center gap-2">
+            <span className="text-3xl font-semibold text-gray-900">৳3850</span>
+            <span className="text-lg text-gray-500 line-through">৳5000</span>
+            <span className="relative bg-orange-400 text-white px-3 py-[2.8px] text-sm font-medium rounded ml-2">
+              <span className="absolute top-[1px] left-[1px] transform -translate-x-full">
+                <span className="block w-0 h-0 border-r-[12px] border-r-orange-400 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent"></span>
+              </span>
+              . ৳1150 ছাড়
+            </span>
+          </div>
           <button className="w-full py-3 bg-green-500 text-white font-semibold text-lg rounded-lg hover:bg-green-600 transition-colors duration-200 capitalize shadow-sm border-b-[7px] border-b-green-600">
             {cta_text.value}
           </button>
