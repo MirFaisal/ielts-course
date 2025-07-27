@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
@@ -32,6 +32,20 @@ const Navbar = () => {
   };
 
   const currentLang = getCurrentLanguage();
+
+  // Prevent body scroll when drawer is open
+  useEffect(() => {
+    if (isMobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // Cleanup function to reset scroll when component unmounts
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileOpen]);
 
   // Toggle language function
   const toggleLanguage = () => {
@@ -68,7 +82,7 @@ const Navbar = () => {
           {/* Suggestions popup */}
           {isSearchFocused && (
             <div className="absolute z-auto top-full left-0 w-full bg-white rounded-xl shadow-lg mt-2 border border-gray-200 overflow-hidden">
-              <p className="text-gray-600 text-xs font-bold px-4 pt-3 pb-1">জনপ্রিয় অনুসন্ধান</p>
+              <p className="text-gray-600 text-xs font-bold px-4 pt-3 pb-1">জনপ্রিয় অনুসন্ধান</p>
               <ul>
                 {suggestions.map((item, i) => (
                   <li
@@ -125,41 +139,79 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Left Drawer */}
       {isMobileOpen && (
-        <div className="lg:hidden px-4 py-3 bg-white shadow-md space-y-4">
-          <input
-            type="text"
-            placeholder="স্কিল কোর্স, বইয়ের স্কুল প্রোগ্রাম সার্চ করুন..."
-            className="w-full border px-4 py-2 rounded-full text-sm focus:outline-none"
+        <div className="lg:hidden fixed inset-0 z-50">
+          {/* Background overlay */}
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+            onClick={() => setIsMobileOpen(false)}
           />
 
-          <div className="space-y-2 text-sm">
-            {navItems.map((item, idx) => (
-              <div key={idx} className="flex justify-between items-center">
-                <span>{item}</span>
-                <span className="text-xs">
-                  {" "}
-                  <IoIosArrowDown />
-                </span>
-              </div>
-            ))}
-          </div>
+          {/* Left drawer */}
+          <div
+            className={`fixed top-0 left-0 h-full w-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+              isMobileOpen ? "translate-x-0" : "-translate-x-full"
+            }`}>
+            {/* Drawer header */}
+            <div className="flex items-center justify-between p-6 border-b">
+              <Image src="/10mslogo-svg.svg" alt="10 Minute School" width={140} height={40} />
+              <button
+                onClick={() => setIsMobileOpen(false)}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                <FiX size={24} />
+              </button>
+            </div>
 
-          <div className="flex items-center gap-2">
-            <button
-              onClick={toggleLanguage}
-              className="border px-3 py-1 rounded flex items-center gap-1 text-sm w-full justify-center hover:bg-gray-50 transition-colors">
-              <MdLanguage />
-              {currentLang.toUpperCase()}
-            </button>
-            <div className="flex items-center gap-1 text-green-600 font-semibold text-sm">
-              <FaPhoneAlt size={14} />
-              16910
+            {/* Drawer content */}
+            <div className="flex flex-col h-full">
+              {/* Search */}
+              <div className="p-6 border-b">
+                <div className="flex items-center w-full px-4 py-3 border rounded-full border-gray-300 bg-gray-50">
+                  <FiSearch className="text-orange-500 mr-3 text-lg" />
+                  <input
+                    type="text"
+                    placeholder="স্কিল কোর্স, কিংবা স্কুল প্রোগ্রাম সার্চ করুন..."
+                    className="w-full text-sm bg-transparent outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Navigation items */}
+              <div className="flex-1 px-6 py-6 overflow-y-auto">
+                {navItems.map((item, idx) => (
+                  <div key={idx} className="mb-4">
+                    <div className="flex justify-between items-center cursor-pointer hover:text-green-600 transition-colors py-4 px-4 hover:bg-gray-50 rounded-lg">
+                      <span className="text-gray-800 font-medium text-base">{item}</span>
+                      <IoIosArrowDown className="text-gray-400 text-lg" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom actions */}
+              <div className="p-6 border-t space-y-4 bg-gray-50">
+                <div className="flex items-center justify-between">
+                  <button
+                    onClick={toggleLanguage}
+                    className="border px-5 py-3 rounded-lg flex items-center gap-3 text-sm hover:bg-white transition-colors border-gray-300 bg-white">
+                    <MdLanguage className="text-lg" />
+                    <span className="font-medium">
+                      {currentLang.toUpperCase() === "EN" ? "বাংলা" : "English"}
+                    </span>
+                  </button>
+                  <div className="flex items-center gap-2 text-green-600 font-semibold">
+                    <FaPhoneAlt size={16} />
+                    <span className="text-base">16910</span>
+                  </div>
+                </div>
+
+                <button className="bg-green-600 hover:bg-green-700 text-white w-full py-4 rounded-lg text-base font-medium transition-colors">
+                  লগ-ইন
+                </button>
+              </div>
             </div>
           </div>
-
-          <button className="bg-green-600 text-white w-full py-2 rounded text-sm">লগ-ইন</button>
         </div>
       )}
     </nav>
