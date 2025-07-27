@@ -56,3 +56,13 @@ body {
   background-color: transparent;
   transition: background-color 0.3s ease;
 }
+
+/* Custom scrollbar hiding for thumbnail navigator */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

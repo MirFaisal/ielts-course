@@ -58,7 +58,7 @@ export default function GroupJoinEngagementSection({ engagements = [] }: GroupJo
                     href={engagement.cta.clicked_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-colors duration-200">
+                    className="inline-block text-center px-5 py-3 bg-green-500 text-white font-semibold text-lg rounded-lg hover:bg-green-600 transition-colors duration-200 capitalize shadow-sm border-b-[7px] border-b-green-600">
                     {engagement.cta.text}
                   </a>
                 )}

@@ -98,7 +98,7 @@ export default function Slider({ media }: { media: MediaItem[] }) {
                       <iframe
                         src={`https://www.youtube.com/embed/${item.resource_value}?autoplay=1`}
                         title={item.name}
-                        className="w-full h-full rounded-md"
+                        className="w-full h-full"
                         allowFullScreen
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       />
@@ -151,9 +151,9 @@ export default function Slider({ media }: { media: MediaItem[] }) {
 
       {/* Thumbnail Navigator */}
       <div className="w-full overflow-hidden px-3">
-        <div className="flex gap-[2px] justify-center">
+        <div className="flex gap-2 md:gap-[2px] justify-center">
           {filteredMedia.map((item: MediaItem, i: number) => (
-            <div key={i} onClick={() => mainSwiper?.slideTo(i)}>
+            <div key={i} onClick={() => mainSwiper?.slideTo(i)} className="cursor-pointer relative">
               <Image
                 src={item.thumbnail_url || item.resource_value}
                 alt={item.name}
@@ -161,7 +161,7 @@ export default function Slider({ media }: { media: MediaItem[] }) {
                 height={40}
                 className={`rounded-lg border-2 cursor-pointer object-cover transition-all duration-200 ${
                   activeIndex === i
-                    ? "border-green-500 ring-2 ring-green-200 shadow-md"
+                    ? "border-green-500 ring-1 md:ring-2 ring-green-200 shadow-md"
                     : "border-gray-300 hover:border-green-500"
                 }`}
               />
