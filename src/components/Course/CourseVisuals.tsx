@@ -59,7 +59,7 @@ const CourseVisuals = ({
       {/* Sticky CourseVisuals - Different appearance when out of view */}
       <div
         ref={stickyRef}
-        className={`fixed top-[100px] z-50 w-[290px] lg:w-[380px] ${
+        className={`fixed top-[100px] z-50 w-full md:w-[290px] lg:w-[380px] ${
           isSticky && isOutOfView ? "opacity-100 " : "opacity-0 pointer-events-none"
         }`}>
         <CourseCart media={media} cta_text={cta_text} checklist={checklist} />
